@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rajwadi Art</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#000;
+      color:white;
+    }
+
+    header{
+      background:#111;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo img{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+    }
+
+    .logo h1{
+      color:gold;
+      font-size:28px;
+    }
+
+    .hero{
+      height:90vh;
+      background:url('1.jpeg') center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.6);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero h2{
+      font-size:55px;
+      color:gold;
+    }
+
+    .hero p{
+      margin-top:10px;
+      font-size:20px;
+    }
+
+    .products{
+      padding:50px 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      color:gold;
+      margin-bottom:40px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#111;
+      border-radius:15px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 0 10px rgba(255,215,0,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:15px;
+      text-align:center;
+    }
+
+    .card-content h3{
+      color:gold;
+      margin-bottom:10px;
+    }
+
+    .price{
+      font-size:22px;
+      margin-bottom:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:gold;
+      color:black;
+      padding:12px 20px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:white;
+    }
+
+    .social{
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .social a{
+      display:inline-block;
+      margin:10px;
+      padding:12px 25px;
+      background:gold;
+      color:black;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .map{
+      padding:20px;
+    }
+
+    iframe{
+      width:100%;
+      height:350px;
+      border:none;
+      border-radius:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111;
+      margin-top:30px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h2{
+        font-size:35px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .logo h1{
+        font-size:22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <img src="logo.png" alt="">
+    <h1>Rajwadi Art</h1>
+  </div>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+    <h2>Luxury Jewellery Collection</h2>
+    <p>Premium Rajwadi Jewellery Designs</p>
+  </div>
+
+</section>
+
+<section class="products">
+
+  <h2 class="section-title">Our Products</h2>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img src="1.jpeg" alt="">
+      <div class="card-content">
+        <h3>1 Gram gold chain / premium quality</h3>
+        <div class="price">₹3199</div>
+
+       <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="2.jpeg" alt="">
+      <div class="card-content">
+        <h3>1 Gram gold chain / premium quality</h3>
+        <div class="price">₹3199</div>
+
+        <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+      </div>
+    </div>
+ <div class="card">
+  <img src="3.jpeg" alt="">
+  <div class="card-content">
+    <h3>1 Gram gold chain / premium quality</h3>
+    <div class="price">₹3199</div>
+
+   <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+  </div>
+</div>
+<div class="card">
+  <img src="4.jpeg" alt="">
+  <div class="card-content">
+    <h3>1 Gram gold chain / premium quality</h3>
+    <div class="price">₹3199</div>
+
+   <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+  </div>
+</div>
+<div class="card">
+  <img src="5.jpeg" alt="">
+  <div class="card-content">
+    <h3>1 Gram gold chain / premium quality</h3>
+    <div class="price">₹2899</div>
+
+   <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+  </div>
+</div>
+    <div class="card">
+      <img src="6.jpeg" alt="">
+      <div class="card-content">
+        <h3>Bold biscuit chain/gold forming/ 1 Gram product</h3>
+        <div class="price">₹999</div>
+
+        <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="7.jpeg" alt="">
+      <div class="card-content">
+        <h3>Khajuri men's premium chain / gold forming/ 1 Gram Chain</h3>
+        <div class="price">₹2799</div>
+
+       <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+      </div>
+    </div>
+<div class="card">
+  <img src="8.jpeg" alt="">
+  <div class="card-content">
+    <h3>Premium biscuit chain/ gold forming/ 1 Gram Chain</h3>
+    <div class="price">₹1199</div>
+
+    <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+  </div>
+</div>
+<div class="card">
+  <img src="9.jpeg" alt="">
+  <div class="card-content">
+    <h3>Gaman kanthi mala / premium quality</h3>
+    <div class="price">₹1849</div>
+
+     <a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello%20I%20want%20to%20order%20Gold%20Chain%20Design%2001"
+target="_blank">
+Order Now
+</a>
+
+
+
+  </div>
+</div>
+
+  </div>
+
+</section>
+
+<section class="social">
+
+  <a href="https://www.instagram.com/rajwadi_art._.deesa?igsh=bXQxNjM4bGN0OXAy" target="_blank">
+    Instagram
+  </a>
+
+  <a href="https://wa.me/917984700889" target="_blank">
+    WhatsApp
+  </a>
+
+</section>
+
+<section class="map">
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.593338933117!2d72.1768676!3d24.255997999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395cbd004ec69c6b%3A0xc42a4b0673d3f7e0!2sRajwadi%20Art!5e0!3m2!1sen!2sin!4v1779552789822!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</section>
+
+<footer>
+  <h3>Rajwadi Art</h3>
+  <p>Mo : 7984700889</p>
+<div class="max-w-7xl mx-auto px-4 py-8 text-center text-white/50">
+        © 2026 𝐑𝐀𝐉𝐖𝐀𝐃𝐈 𝐀𝐑𝐓 ✨
+    </div>
+
+</footer>
+
+</body>
+</html>
