@@ -1,260 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rajwadi Art</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rajwadi Art</title>
 
-  <style>
+<!-- SEARCH ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<style>
 
-    body{
-      background:#000;
-      color:white;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    header{
-      background:#111;
-      padding:15px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+body{
+  background:#000;
+  color:white;
+}
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+header{
+  background:#111;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    .logo img{
-      width:60px;
-      height:60px;
-      border-radius:50%;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .logo h1{
-      color:gold;
-      font-size:28px;
-    }
+.logo img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
 
-    .hero{
-      height:90vh;
-      background:url('1.jpeg') center/cover no-repeat;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      position:relative;
-    }
+.logo h1{
+  color:gold;
+  font-size:28px;
+}
 
-    .hero::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.6);
-    }
+/* SEARCH BAR */
 
-    .hero-content{
-      position:relative;
-      z-index:2;
-    }
+.search-box{
+  display:flex;
+  align-items:center;
+  background:#222;
+  border-radius:30px;
+  padding:10px 15px;
+  width:300px;
+}
 
-    .hero h2{
-      font-size:55px;
-      color:gold;
-    }
+.search-box i{
+  color:gold;
+  margin-right:10px;
+  font-size:18px;
+}
 
-    .hero p{
-      margin-top:10px;
-      font-size:20px;
-    }
+.search-box input{
+  background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  width:100%;
+  font-size:15px;
+}
 
-    .products{
-      padding:50px 20px;
-    }
+.hero{
+  height:90vh;
+  background:url('1.jpeg') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
 
-    .section-title{
-      text-align:center;
-      font-size:40px;
-      color:gold;
-      margin-bottom:40px;
-    }
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
 
-    /* LAPTOP VIEW */
+.hero-content{
+  position:relative;
+  z-index:2;
+}
 
-    .product-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:25px;
-    }
+.hero h2{
+  font-size:55px;
+  color:gold;
+}
 
-    .card{
-      background:#111;
-      border-radius:15px;
-      overflow:hidden;
-      transition:0.3s;
-      box-shadow:0 0 10px rgba(255,215,0,0.2);
-    }
+.hero p{
+  margin-top:10px;
+  font-size:20px;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-    }
+.products{
+  padding:50px 20px;
+}
 
-    .card img{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-    }
+.section-title{
+  text-align:center;
+  font-size:40px;
+  color:gold;
+  margin-bottom:40px;
+}
 
-    .card-content{
-      padding:15px;
-      text-align:center;
-    }
+/* PRODUCT GRID */
 
-    .card-content h3{
-      color:gold;
-      margin-bottom:10px;
-      font-size:16px;
-      line-height:24px;
-    }
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:25px;
+}
 
-    .price{
-      font-size:22px;
-      margin-bottom:15px;
-    }
+.card{
+  background:#111;
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.3s;
+  box-shadow:0 0 10px rgba(255,215,0,0.2);
+}
 
-    .btn{
-      display:inline-block;
-      background:gold;
-      color:black;
-      padding:12px 20px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-      font-size:14px;
-    }
+.card:hover{
+  transform:translateY(-10px);
+}
 
-    .btn:hover{
-      background:white;
-    }
+.card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  cursor:pointer;
+}
 
-    .social{
-      text-align:center;
-      padding:40px 20px;
-    }
+.card-content{
+  padding:15px;
+  text-align:center;
+}
 
-    .social a{
-      display:inline-block;
-      margin:10px;
-      padding:12px 25px;
-      background:gold;
-      color:black;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:bold;
-    }
+.card-content h3{
+  color:gold;
+  margin-bottom:10px;
+  font-size:16px;
+  line-height:24px;
+}
 
-    .map{
-      padding:20px;
-    }
+.price{
+  font-size:22px;
+  margin-bottom:15px;
+}
 
-    iframe{
-      width:100%;
-      height:350px;
-      border:none;
-      border-radius:15px;
-    }
+.btn{
+  display:inline-block;
+  background:gold;
+  color:black;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+  font-size:14px;
+}
 
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#111;
-      margin-top:30px;
-    }
+.btn:hover{
+  background:white;
+}
 
-    /* MOBILE VIEW */
+.social{
+  text-align:center;
+  padding:40px 20px;
+}
 
-    @media(max-width:768px){
+.social a{
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  background:gold;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-      .hero{
-        height:60vh;
-      }
+.map{
+  padding:20px;
+}
 
-      .hero h2{
-        font-size:30px;
-      }
+iframe{
+  width:100%;
+  height:350px;
+  border:none;
+  border-radius:15px;
+}
 
-      .hero p{
-        font-size:14px;
-      }
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+  margin-top:30px;
+}
 
-      .logo h1{
-        font-size:20px;
-      }
+/* IMAGE POPUP */
 
-      .logo img{
-        width:45px;
-        height:45px;
-      }
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
 
-      .section-title{
-        font-size:28px;
-      }
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:15px;
+}
 
-      /* MOBILE ME 3 PRODUCT */
+.popup span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
 
-      .product-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:10px;
-      }
+/* MOBILE VIEW */
 
-      .card{
-        border-radius:10px;
-      }
+@media(max-width:768px){
 
-      .card img{
-        height:120px;
-      }
+  header{
+    flex-direction:column;
+    gap:10px;
+  }
 
-      .card-content{
-        padding:8px;
-      }
+  .search-box{
+    width:100%;
+  }
 
-      .card-content h3{
-        font-size:10px;
-        line-height:14px;
-        margin-bottom:5px;
-      }
+  .hero{
+    height:60vh;
+  }
 
-      .price{
-        font-size:13px;
-        margin-bottom:8px;
-      }
+  .hero h2{
+    font-size:30px;
+  }
 
-      .btn{
-        padding:6px 8px;
-        font-size:10px;
-        border-radius:20px;
-      }
+  .hero p{
+    font-size:14px;
+  }
 
-      iframe{
-        height:250px;
-      }
+  .logo h1{
+    font-size:20px;
+  }
 
-    }
+  .logo img{
+    width:45px;
+    height:45px;
+  }
 
-  </style>
+  .section-title{
+    font-size:28px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+  }
+
+  .card{
+    border-radius:10px;
+  }
+
+  .card img{
+    height:120px;
+  }
+
+  .card-content{
+    padding:8px;
+  }
+
+  .card-content h3{
+    font-size:10px;
+    line-height:14px;
+    margin-bottom:5px;
+  }
+
+  .price{
+    font-size:13px;
+    margin-bottom:8px;
+  }
+
+  .btn{
+    padding:6px 8px;
+    font-size:10px;
+    border-radius:20px;
+  }
+
+  iframe{
+    height:250px;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -262,247 +330,316 @@
 
 <header>
 
-  <div class="logo">
-    <img src="logo.png" alt="">
-    <h1>Rajwadi Art</h1>
-  </div>
+<div class="logo">
+<img src="logo.png" alt="">
+<h1>Rajwadi Art</h1>
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text"
+id="searchInput"
+placeholder="Search Product..."
+onkeyup="searchProduct()">
+
+</div>
 
 </header>
 
 <section class="hero">
 
-  <div class="hero-content">
-    <h2>Luxury Jewellery Collection</h2>
-    <p>Premium Rajwadi Jewellery Designs</p>
-  </div>
+<div class="hero-content">
+<h2>Luxury Jewellery Collection</h2>
+<p>Premium Rajwadi Jewellery Designs</p>
+</div>
 
 </section>
 
 <section class="products">
 
-  <h2 class="section-title">Our Products</h2>
+<h2 class="section-title">Our Products</h2>
 
-  <div class="product-grid">
+<div class="product-grid">
 
-    <!-- PRODUCT 1 -->
+<!-- PRODUCT 1 -->
 
-    <div class="card">
-      <img src="1.jpeg" alt="">
-      <div class="card-content">
-        <h3>1 Gram gold chain / premium quality</h3>
-        <div class="price">₹3199</div>
+<div class="card">
+<img src="1.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 Gram gold chain premium quality</h3>
+<div class="price">₹3199</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 1"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 1"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 2 -->
+<!-- PRODUCT 2 -->
 
-    <div class="card">
-      <img src="2.jpeg" alt="">
-      <div class="card-content">
-        <h3>1 Gram gold chain / premium quality</h3>
-        <div class="price">₹3199</div>
+<div class="card">
+<img src="2.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 Gram gold chain premium quality</h3>
+<div class="price">₹3199</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 2"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 2"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 3 -->
+<!-- PRODUCT 3 -->
 
-    <div class="card">
-      <img src="3.jpeg" alt="">
-      <div class="card-content">
-        <h3>1 Gram gold chain / premium quality</h3>
-        <div class="price">₹3199</div>
+<div class="card">
+<img src="3.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 Gram gold chain premium quality</h3>
+<div class="price">₹3199</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 3"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 3"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 4 -->
+<!-- PRODUCT 4 -->
 
-    <div class="card">
-      <img src="4.jpeg" alt="">
-      <div class="card-content">
-        <h3>1 Gram gold chain / premium quality</h3>
-        <div class="price">₹3199</div>
+<div class="card">
+<img src="4.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 Gram gold chain premium quality</h3>
+<div class="price">₹3199</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 4"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 4"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 5 -->
+<!-- PRODUCT 5 -->
 
-    <div class="card">
-      <img src="5.jpeg" alt="">
-      <div class="card-content">
-        <h3>1 Gram gold chain / premium quality</h3>
-        <div class="price">₹2899</div>
+<div class="card">
+<img src="5.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 Gram gold chain premium quality</h3>
+<div class="price">₹2899</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 5"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 5"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 6 -->
+<!-- PRODUCT 6 -->
 
-    <div class="card">
-      <img src="6.jpeg" alt="">
-      <div class="card-content">
-        <h3>Bold biscuit chain / gold forming / 1 Gram product</h3>
-        <div class="price">₹999</div>
+<div class="card">
+<img src="6.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>Bold biscuit chain gold forming</h3>
+<div class="price">₹999</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 6"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 6"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 7 -->
+<!-- PRODUCT 7 -->
 
-    <div class="card">
-      <img src="7.jpeg" alt="">
-      <div class="card-content">
-        <h3>Khajuri men's premium chain / gold forming</h3>
-        <div class="price">₹2799</div>
+<div class="card">
+<img src="7.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>Khajuri mens premium chain</h3>
+<div class="price">₹2799</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 7"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 7"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 8 -->
+<!-- PRODUCT 8 -->
 
-    <div class="card">
-      <img src="8.jpeg" alt="">
-      <div class="card-content">
-        <h3>Premium biscuit chain / gold forming</h3>
-        <div class="price">₹1199</div>
+<div class="card">
+<img src="8.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>Premium biscuit chain</h3>
+<div class="price">₹1199</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 8"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 8"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    <!-- PRODUCT 9 -->
+<!-- PRODUCT 9 -->
 
-    <div class="card">
-      <img src="9.jpeg" alt="">
-      <div class="card-content">
-        <h3>Gaman kanthi mala / premium quality</h3>
-        <div class="price">₹1849</div>
+<div class="card">
+<img src="9.jpeg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>Gaman kanthi mala</h3>
+<div class="price">₹1849</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 9"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 9"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-        <!-- PRODUCT 10 -->
+<!-- PRODUCT 10 -->
 
-    <div class="card">
-      <img src="10.jpg" alt="">
-      <div class="card-content">
-        <h3>1 garm mangalsutra / premium quality</h3>
-        <div class="price">₹699</div>
+<div class="card">
+<img src="10.jpg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>1 gram mangalsutra</h3>
+<div class="price">₹699</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 9"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 10"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-        <!-- PRODUCT 11 -->
+<!-- PRODUCT 11 -->
 
-    <div class="card">
-      <img src="11.jpg" alt="">
-      <div class="card-content">
-        <h3>Punjabi kada / premium quality</h3>
-        <div class="price">₹2649</div>
+<div class="card">
+<img src="11.jpg" alt="" onclick="openPopup(this.src)">
+<div class="card-content">
+<h3>Punjabi kada premium</h3>
+<div class="price">₹2649</div>
 
-        <a class="btn"
-        href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 9"
-        target="_blank">
-        Order Now
-        </a>
+<a class="btn"
+href="https://api.whatsapp.com/send?phone=917984700889&text=Hello I want to order Product 11"
+target="_blank">
+Order Now
+</a>
 
-      </div>
-    </div>
+</div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
+<!-- IMAGE POPUP -->
+
+<div class="popup" id="popup">
+
+<span onclick="closePopup()">&times;</span>
+
+<img id="popup-img">
+
+</div>
+
 <section class="social">
 
-  <a href="https://www.instagram.com/rajwadi_art._.deesa?igsh=bXQxNjM4bGN0OXAy" target="_blank">
-    Instagram
-  </a>
+<a href="https://www.instagram.com/rajwadi_art._.deesa?igsh=bXQxNjM4bGN0OXAy" target="_blank">
+Instagram
+</a>
 
-  <a href="https://wa.me/917984700889" target="_blank">
-    WhatsApp
-  </a>
+<a href="https://wa.me/917984700889" target="_blank">
+WhatsApp
+</a>
 
 </section>
 
 <section class="map">
 
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.593338933117!2d72.1768676!3d24.255997999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395cbd004ec69c6b%3A0xc42a4b0673d3f7e0!2sRajwadi%20Art!5e0!3m2!1sen!2sin!4v1779552789822!5m2!1sen!2sin"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.593338933117!2d72.1768676!3d24.255997999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395cbd004ec69c6b%3A0xc42a4b0673d3f7e0!2sRajwadi%20Art!5e0!3m2!1sen!2sin!4v1779552789822!5m2!1sen!2sin"></iframe>
 
 </section>
 
 <footer>
 
-  <h3>Rajwadi Art</h3>
-  <p>Mo : 7984700889</p>
+<h3>Rajwadi Art</h3>
+<p>Mo : 7984700889</p>
 
-  <div>
-    © 2026 𝐑𝐀𝐉𝐖𝐀𝐃𝐈 𝐀𝐑𝐓 ✨
-  </div>
+<div>
+© 2026 𝐑𝐀𝐉𝐖𝐀𝐃𝐈 𝐀𝐑𝐓 ✨
+</div>
 
 </footer>
+
+<script>
+
+/* SEARCH */
+
+function searchProduct(){
+
+let input =
+document.getElementById("searchInput")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let title =
+card.querySelector("h3")
+.innerText.toLowerCase();
+
+if(title.includes(input)){
+card.style.display = "block";
+}else{
+card.style.display = "none";
+}
+
+});
+
+}
+
+/* IMAGE POPUP */
+
+function openPopup(src){
+
+document.getElementById("popup").style.display="flex";
+
+document.getElementById("popup-img").src=src;
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+</script>
 
 </body>
 </html>
